@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+header {
+  width: 750px;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 50px 20px;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px pink;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 0.5) 0%,
+    rgba(148, 230, 233, 0.5) 100%
+  );
+}
+
+main {
+  width: 750px;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 50px 20px;
+  margin: 0 auto;
+  text-align: center;
+}
