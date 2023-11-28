@@ -77,7 +77,7 @@ $productions = [
 
 <body>
     <header>
-        <h1>Production List</h1>
+        <h1>Production List</h1>.
     </header>
     <main>
         <table class="table table-success table-striped">
@@ -88,13 +88,14 @@ $productions = [
                     <th scope="col">RATING</th>
                 </tr>
             </thead>
-            <tbody <?php foreach ($productions as $production) { ?>>
-                <tr>
-                    <th scope="row"><?php echo $production->title ?></th>
-                    <td><?php echo $production->language ?></td>
-                    <td><?php echo $production->rating ?></td>
+            <tbody>
+                <?php foreach ($productions as $production) { ?>
+                    <tr>
+                        <th scope="row"><?php echo $production->title ?></th>
+                        <td><?php echo $production->language ?></td>
+                        <td><?php echo $production->rating ?></td>
+                    </tr>
                 <?php } ?>
-                </tr>
             </tbody>
         </table>
     </main>
