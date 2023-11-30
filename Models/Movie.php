@@ -8,11 +8,16 @@ class Movie extends Production {
     protected $profit;
     protected $duration;
 
-    public function setProfit($profit) {
-        if (is_numeric($profit) && $profit > 0) {
-            $this->profit = $profit;
-        } else {
-            echo 'Il valore $profit non è valido';
+    // Creo il costrutto di Movie però implementando la struttura del costrutto genitore (costrutto di Production)
+    public function __construct($_title, $_language, $_rating, $_profit, $_duration) {
+        parent:: __construct($_title, $_language, $_rating);
+        $this->setProfit($_profit);
+        $this->setDuration($_duration);
+    }
+
+    public function setProfit($_profit) {
+        if (is_numeric($_profit) && $_profit > 0) {
+            $this->profit = $_profit;
         }
     }
 
@@ -20,17 +25,24 @@ class Movie extends Production {
         return $this->profit;
     }
 
-    public function setDuration($duration) {
-        if (is_numeric($duration) && $duration > 0) {
-            $this->rating = $duration;
-        } else {
-            echo 'Il valore $duration non è valido';
-        }
+    public function setDuration($_duration) {
+        if (is_numeric($_duration) && $_duration > 0) {
+            $this->duration = intval($_duration);
+        } 
     }
 
     public function getDuration() {
         return $this->duration;
     }
+
+    public function getDetailsAsAssociativeArrray() {
+        $details = parent::getDetailsAsAssociativeArrray();
+        $details['profit'] = $this->getProfit();
+        $details['duration'] = $this->getDuration();
+        return $details;
+      }
 }
+
+
 
 ?>

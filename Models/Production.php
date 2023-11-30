@@ -1,10 +1,13 @@
 <?php
 
+require_once __DIR__ . ('/Movie.php');
+require_once __DIR__ . ('/Serie.php');
 class Production
 {
     public $title;
     public $language;
     public $rating;
+
 
     public function __construct($_title, $_language, $_rating)
     {
@@ -46,6 +49,13 @@ class Production
     {
         return $this->rating;
     }
-}
 
-?>
+    public function getDetailsAsAssociativeArrray() {
+      $details = [
+        'title' => $this->getTitle(),
+        'language' => $this->getLanguage(),
+        'rating' => $this->getRating()
+      ];
+      return $details;
+    }
+}
